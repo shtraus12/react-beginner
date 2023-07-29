@@ -1,39 +1,42 @@
-import React from 'react'
-import { CVData } from '../models'
+import React, { ReactNode } from 'react'
 
-// interface Props {
-//   cvData: CVData
-// }
+interface props {
+  tabs: Array<{
+    tabTitle: string
+    tabContent: ReactNode
+  }>
+}
 
-// interface State {}
+function TabContainer({ tabs }: props) {
+  const [currentTab, moveToTab] = React.useState(0)
+  const tabNavigatorRef = React.useRef<HTMLDivElement>(null)
 
-// class TabContainer extends React.Component<Props, State> {
-//   moveTo() {}
+  setTimeout(() => {
+    if (tabNavigatorRef.current) tabNavigatorRef.current.scrollLeft += 100
+    console.log('hello')
+    setTimeout(() => {
+      if (tabNavigatorRef.current) tabNavigatorRef.current.scrollLeft = 0
+    }, 400)
+  }, 800)
 
-//   constructor() {
-//     super(pr)
-//     this.state = { currentTab: 'q' }
-//   }
+  return (
+    <div className="tab-container">
+      <div className="tab-navigator" ref={tabNavigatorRef} onLoad={() => {}}>
+        {tabs.map((tab, index) => {
+          return (
+            <div
+              className={index === currentTab ? 'tab-active' : 'tab'}
+              key={index}
+              onClick={moveToTab.bind({}, index)}
+            >
+              {tab.tabTitle}
+            </div>
+          )
+        })}
+      </div>
+      <div className="tab-content">{tabs[currentTab].tabContent}</div>
+    </div>
+  )
+}
 
-//   render(): React.ReactNode {
-//     return (
-//       <div className="tab-container">
-//         <div className="tab-navigator"></div>
-//         <div className="tab-content"></div>
-//       </div>
-//     )
-//   }
-// }
-
-// function TabConsdtainer() {
-//   return (
-//     <div className="tab-container">
-//       <div className="tab-navigator"></div>
-//       <div className="tab-content"></div>
-//     </div>
-//   )
-// }
-
-// function moveTo(tab: string) {}
-
-// export default TabContainer
+export default TabContainer

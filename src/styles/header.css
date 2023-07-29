@@ -21,7 +21,7 @@
 .header .person .name-position {
   display: flex;
   flex-direction: column;
-  gap: 1vw;
+  gap: 0.5rem;
 }
 
 .header .person .name {
