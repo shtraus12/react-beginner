@@ -1,10 +1,10 @@
 @import url('./styles/header.css');
 @import url('./styles/text-block.css');
 @import url('./styles/career-block.css');
-/* @import url('./tab-container.css');
-@import url('./blocks/educations-block.css');
-@import url('./blocks/languages-block.css');*/
+@import url('./styles/educations-block.css');
 @import url('./styles/projects-highlights-block.css');
+@import url('./styles/languages-block.css');
+/* @import url('./tab-container.css');*/
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;600&family=IBM+Plex+Sans:wght@300;500;700&display=swap');
 
 body {

@@ -1,21 +1,27 @@
 import React from 'react'
 import logo from './logo.svg'
+import { cvData } from './data/cvData'
 import Header from './components/Header'
 import Careers from './components/Careers'
-import { cvData } from './data/cvData'
 import Profile from './components/Profile'
 import Projects from './components/Projects'
+import Educations from './components/Educations'
+import Languages from './components/Languages'
 
 function App() {
   return (
     <div className="container">
-      <Header cvData={cvData} />
+      <Header headerData={cvData.headerData} />
       <hr />
-      <Profile cvData={cvData} />
+      <Profile profile={cvData.profile} />
       <hr />
-      <Careers cvData={cvData} />
+      <Careers careers={cvData.careers} />
       <hr />
-      <Projects cvData={cvData} />
+      <Projects projects={cvData.projectsHighlights} />
+      <hr />
+      <Educations educations={cvData.educations} />
+      <hr />
+      <Languages languages={cvData.languages} />
     </div>
   )
 }

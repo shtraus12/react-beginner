@@ -1,15 +1,15 @@
 import React from 'react'
-import { ICVData } from '../models'
+import { CareersData } from '../models'
 import TextBlock from './TextBlock'
 
 interface Props {
-  cvData: ICVData
+  careers: CareersData
 }
 
-function Careers({ cvData }: Props) {
+function Careers({ careers }: Props) {
   return (
     <div className="career-block">
-      {cvData.careers.map((career, index) => {
+      {careers.map((career, index) => {
         return (
           <div className="work-experience" key={index}>
             <div className="rest">

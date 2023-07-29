@@ -1,14 +1,14 @@
 import React from 'react'
-import { ICVData } from '../models'
+import { ProjectsData } from '../models'
 
 interface props {
-  cvData: ICVData
+  projects: ProjectsData
 }
 
-function Projects({ cvData }: props) {
+function Projects({ projects }: props) {
   return (
     <div className="projects-highlights-block">
-      {cvData.projectsHighlights.map((project, index) => {
+      {projects.map((project, index) => {
         return (
           <div className="project" key={index}>
             <div className="rest">

@@ -1,21 +1,33 @@
-export interface ICVData {
+export interface CVData {
+  headerData: HeaderData
+  profile: ProfileData
+  careers: CareersData
+  projectsHighlights: ProjectsData
+  educations: EducationsData
+  languages: LanguagesData
+}
+
+export interface HeaderData {
   avatarPath: string
   fullName: string
   position: string
-  contactInformation: Array<contact>
-  profile: string
-  careers: Array<workingExperience>
-  projectsHighlights: Array<project>
+  contactInformation: Array<Contact>
 }
 
-interface contact {
+type Contact = {
   iconPath?: string
   title: string
   body: string
   bodyLink?: string
 }
 
-interface workingExperience {
+export interface ProfileData {
+  description: string
+}
+
+export interface CareersData extends Array<workingExperience> {}
+
+type workingExperience = {
   dates: string
   duration: string
   position: string
@@ -24,9 +36,26 @@ interface workingExperience {
   description: string
 }
 
+export interface ProjectsData extends Array<project> {}
+
 interface project {
   title: string
   dates: string
   duration: string
   description: string
+}
+
+export interface EducationsData extends Array<education> {}
+
+type education = {
+  dates: string
+  schoolName: string
+  description: string
+}
+
+export interface LanguagesData extends Array<language> {}
+
+type language = {
+  languageName: string
+  level: string
 }

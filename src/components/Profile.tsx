@@ -1,16 +1,16 @@
 import React from 'react'
-import { ICVData } from '../models'
+import { ProfileData } from '../models'
 import TextBlock from './TextBlock'
 
 interface Props {
-  cvData: ICVData
+  profile: ProfileData
 }
 
-function Profile({ cvData }: Props) {
+function Profile({ profile }: Props) {
   return (
     <div className="text-block">
       <div className="block-header">Profile</div>
-      {<TextBlock body={cvData.profile} />}
+      {<TextBlock body={profile.description} />}
     </div>
   )
 }

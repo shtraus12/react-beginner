@@ -1,8 +1,8 @@
 import React from 'react'
-import { ICVData } from '../models'
+import { CVData } from '../models'
 
 // interface Props {
-//   cvData: ICVData
+//   cvData: CVData
 // }
 
 // interface State {}
