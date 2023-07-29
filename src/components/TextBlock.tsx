@@ -2,25 +2,16 @@ import React from 'react'
 import { ICVData } from '../models'
 
 interface Props {
-  paragraphs: Array<{
-    header?: string
-    body: string
-  }>
+  body: string
 }
 
-function TextBlock({ paragraphs }: Props) {
+function TextBlock({ body }: Props) {
   return (
-    <div className="block-body">
-      {paragraphs.map((paragraph) => {
-        return (
-          <div className="paragraph">
-            {paragraph.header && (
-              <div className="paragraph-header">{paragraph.header}</div>
-            )}
-            <div className="paragraph-body"> {paragraph.body}</div>
-          </div>
-        )
-      })}
+    <div className="text-block">
+      <div
+        className="block-body"
+        dangerouslySetInnerHTML={{ __html: body }}
+      ></div>
     </div>
   )
 }

@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Careers from './components/Careers'
 import { cvData } from './data/cvData'
 import Profile from './components/Profile'
+import Projects from './components/Projects'
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
       <Profile cvData={cvData} />
       <hr />
       <Careers cvData={cvData} />
+      <hr />
+      <Projects cvData={cvData} />
     </div>
   )
 }

@@ -10,7 +10,7 @@ function Profile({ cvData }: Props) {
   return (
     <div className="text-block">
       <div className="block-header">Profile</div>
-      {<TextBlock paragraphs={cvData.profile} />}
+      {<TextBlock body={cvData.profile} />}
     </div>
   )
 }

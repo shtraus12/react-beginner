@@ -9,9 +9,9 @@ interface Props {
 function Careers({ cvData }: Props) {
   return (
     <div className="career-block">
-      {cvData.careers.map((career) => {
+      {cvData.careers.map((career, index) => {
         return (
-          <div className="work-experience">
+          <div className="work-experience" key={index}>
             <div className="rest">
               <div className="general">
                 <div className="position-dates">
@@ -28,7 +28,7 @@ function Careers({ cvData }: Props) {
                 </div>
               </div>
               <div className="description">
-                <TextBlock paragraphs={career.description} />
+                <TextBlock body={career.description} />
               </div>
             </div>
             <div className="timeline">

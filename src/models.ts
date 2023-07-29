@@ -3,8 +3,9 @@ export interface ICVData {
   fullName: string
   position: string
   contactInformation: Array<contact>
-  profile: Array<textParagraph>
+  profile: string
   careers: Array<workingExperience>
+  projectsHighlights: Array<project>
 }
 
 interface contact {
@@ -14,16 +15,18 @@ interface contact {
   bodyLink?: string
 }
 
-interface textParagraph {
-  header?: string
-  body: string
-}
-
 interface workingExperience {
   dates: string
   duration: string
   position: string
   onSiteRemote: string
   companyName: string
-  description: Array<textParagraph>
+  description: string
+}
+
+interface project {
+  title: string
+  dates: string
+  duration: string
+  description: string
 }
