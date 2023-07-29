@@ -8,10 +8,7 @@ interface Props {
 
 function Profile({ profile }: Props) {
   return (
-    <div className="text-block">
-      <div className="block-header">Profile</div>
-      {<TextBlock body={profile.description} />}
-    </div>
+    <div className="text-block">{<TextBlock body={profile.description} />}</div>
   )
 }
 
