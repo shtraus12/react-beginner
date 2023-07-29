@@ -13,7 +13,6 @@ function TabContainer({ tabs }: props) {
 
   setTimeout(() => {
     if (tabNavigatorRef.current) tabNavigatorRef.current.scrollLeft += 100
-    console.log('hello')
     setTimeout(() => {
       if (tabNavigatorRef.current) tabNavigatorRef.current.scrollLeft = 0
     }, 400)
