@@ -1,11 +1,11 @@
 import React from 'react'
 import { LanguagesData } from '../../models'
 
-interface Props {
+interface LangugaesProps {
   languages: LanguagesData
 }
 
-function Languages({ languages }: Props) {
+function Languages({ languages }: LangugaesProps) {
   return (
     <div className="languages-block">
       <div className="block-header">Langagues</div>

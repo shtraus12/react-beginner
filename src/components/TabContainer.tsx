@@ -1,27 +1,29 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useEffect } from 'react'
 
-interface props {
+interface TabContainerProps {
   tabs: Array<{
     tabTitle: string
     tabContent: ReactNode
   }>
 }
 
-function TabContainer({ tabs }: props) {
+function TabContainer({ tabs }: TabContainerProps) {
   const [currentTab, moveToTab] = React.useState(0)
   const tabNavigatorRef = React.useRef<HTMLDivElement>(null)
 
-  setTimeout(() => {
-    if (tabNavigatorRef.current) {
-      const scrollLeft = tabNavigatorRef.current.scrollLeft
-      tabNavigatorRef.current.scrollLeft = scrollLeft + 100
-      setTimeout(() => {
-        if (tabNavigatorRef.current) {
-          tabNavigatorRef.current.scrollLeft = scrollLeft - 100
-        }
-      }, 400)
-    }
-  }, 800)
+  useEffect(() => {
+    setTimeout(() => {
+      if (tabNavigatorRef.current) {
+        const scrollLeft = tabNavigatorRef.current.scrollLeft
+        tabNavigatorRef.current.scrollLeft = scrollLeft + 100
+        setTimeout(() => {
+          if (tabNavigatorRef.current) {
+            tabNavigatorRef.current.scrollLeft = scrollLeft - 100
+          }
+        }, 400)
+      }
+    }, 800)
+  })
 
   return (
     <div className="tab-container">
@@ -30,7 +32,7 @@ function TabContainer({ tabs }: props) {
           return (
             <div
               className={index === currentTab ? 'tab-active' : 'tab'}
-              key={index}
+              key={`tab${index}`}
               onClick={moveToTab.bind({}, index)}
             >
               {tab.tabTitle}

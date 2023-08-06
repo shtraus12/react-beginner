@@ -2,16 +2,16 @@ import React from 'react'
 import { CareersData } from '../../models'
 import TextBlock from '../TextBlock'
 
-interface Props {
+interface CareersProps {
   careers: CareersData
 }
 
-function Careers({ careers }: Props) {
+function Careers({ careers }: CareersProps) {
   return (
     <div className="career-block">
       {careers.map((career, index) => {
         return (
-          <div className="work-experience" key={index}>
+          <div className="work-experience" key={`work-experience-${index}`}>
             <div className="rest">
               <div className="general">
                 <div className="position-dates">

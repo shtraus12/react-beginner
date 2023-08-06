@@ -1,11 +1,11 @@
 import React from 'react'
 import { EducationsData } from '../../models'
 
-interface Props {
+interface EducationsProps {
   educations: EducationsData
 }
 
-function Educations({ educations }: Props) {
+function Educations({ educations }: EducationsProps) {
   return (
     <div className="educations-block">
       {educations.map((education, index) => {

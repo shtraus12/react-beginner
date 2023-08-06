@@ -1,5 +1,4 @@
-import React from 'react'
-import logo from './logo.svg'
+import React, { ReactElement } from 'react'
 import { cvData } from './data/cvData'
 import Header from './components/Header/Header'
 import Careers from './components/Careers/Careers'
@@ -8,9 +7,15 @@ import Projects from './components/ProjectsHighlights/Projects'
 import Educations from './components/Educations/Educations'
 import Languages from './components/LanguagesBlock/Languages'
 import TabContainer from './components/TabContainer'
+import { type } from 'os'
+
+type tabs = Array<{
+  tabTitle: string
+  tabContent: ReactElement
+}>
 
 function App() {
-  const tabs = [
+  const tabs: tabs = [
     {
       tabTitle: 'Profile',
       tabContent: (
@@ -40,16 +45,6 @@ function App() {
       <Header headerData={cvData.headerData} />
       <hr />
       <TabContainer tabs={tabs} />
-
-      {/* <Profile profile={cvData.profile} />
-      <hr />
-      <Careers careers={cvData.careers} />
-      <hr />
-      <Projects projects={cvData.projectsHighlights} />
-      <hr />
-      <Educations educations={cvData.educations} />
-      <hr />
-      <Languages languages={cvData.languages} /> */}
     </div>
   )
 }

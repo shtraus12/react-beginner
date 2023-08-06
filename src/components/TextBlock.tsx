@@ -1,11 +1,11 @@
 import React from 'react'
 import { CVData } from '../models'
 
-interface Props {
+interface TextBlockProps {
   body: string
 }
 
-function TextBlock({ body }: Props) {
+function TextBlock({ body }: TextBlockProps) {
   return (
     <div className="text-block">
       <div

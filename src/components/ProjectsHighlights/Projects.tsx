@@ -1,11 +1,11 @@
 import React from 'react'
 import { ProjectsData } from '../../models'
 
-interface Props {
+interface ProjectsProps {
   projects: ProjectsData
 }
 
-function Projects({ projects }: Props) {
+function Projects({ projects }: ProjectsProps) {
   return (
     <div className="projects-highlights-block">
       {projects.map((project, index) => {

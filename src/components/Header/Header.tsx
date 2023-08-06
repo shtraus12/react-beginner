@@ -1,10 +1,10 @@
 import { HeaderData } from '../../models'
 
-interface Props {
+interface HeaderProps {
   headerData: HeaderData
 }
 
-function Header({ headerData }: Props) {
+function Header({ headerData }: HeaderProps) {
   return (
     <div className="header">
       <div className="person">
