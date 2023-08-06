@@ -10,7 +10,7 @@ interface InfoModalWindowProps {
 function InfoModalWindow({ onSubmit, headerText, body }: InfoModalWindowProps) {
   return (
     <ModalWindow>
-      <form className="modal-window" onSubmit={event}>
+      <form className="modal-window">
         <div className="header">{headerText}</div>
         <div className="body">{body}</div>
         <div className="footer">

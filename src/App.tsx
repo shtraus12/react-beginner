@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useState } from 'react'
 import { cvData } from './data/cvData'
 import Header from './components/Header/Header'
 import Careers from './components/Careers/Careers'
@@ -8,6 +8,8 @@ import Educations from './components/Educations/Educations'
 import Languages from './components/LanguagesBlock/Languages'
 import TabContainer from './components/TabContainer'
 import { type } from 'os'
+import ModalWindow from './components/ModalWindow/ModalWindow'
+import InfoModalWindow from './components/ModalWindow/InfoModalWindow/InfoModalWindow'
 
 type tabs = Array<{
   tabTitle: string
@@ -40,11 +42,28 @@ function App() {
     },
   ]
 
+  const [modal, setModal] = useState(false)
+
+  function changeModalVisibility() {
+    setModal(!modal)
+  }
+
   return (
     <div className="container">
-      <Header headerData={cvData.headerData} />
+      <Header
+        headerData={cvData.headerData}
+        nameOnClickFunction={changeModalVisibility}
+      />
       <hr />
       <TabContainer tabs={tabs} />
+
+      {modal && (
+        <InfoModalWindow
+          onSubmit={changeModalVisibility}
+          headerText="Header"
+          body="qweqwe"
+        />
+      )}
     </div>
   )
 }

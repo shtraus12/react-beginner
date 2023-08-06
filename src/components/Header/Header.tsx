@@ -1,16 +1,20 @@
+import { Function } from '@babel/types'
 import { HeaderData } from '../../models'
 
 interface HeaderProps {
+  nameOnClickFunction: () => void
   headerData: HeaderData
 }
 
-function Header({ headerData }: HeaderProps) {
+function Header({ nameOnClickFunction, headerData }: HeaderProps) {
   return (
     <div className="header">
       <div className="person">
         <img src={headerData.avatarPath} alt="avatar" />
         <div className="name-position">
-          <div className="name">{headerData.fullName}</div>
+          <div className="name" onClick={nameOnClickFunction}>
+            {headerData.fullName}
+          </div>
           <div className="position">{headerData.position}</div>
         </div>
       </div>
