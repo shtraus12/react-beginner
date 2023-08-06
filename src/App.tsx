@@ -1,12 +1,12 @@
 import React from 'react'
 import logo from './logo.svg'
 import { cvData } from './data/cvData'
-import Header from './components/Header'
-import Careers from './components/Careers'
-import Profile from './components/Profile'
-import Projects from './components/Projects'
-import Educations from './components/Educations'
-import Languages from './components/Languages'
+import Header from './components/Header/Header'
+import Careers from './components/Careers/Careers'
+import Profile from './components/Profile/Profile'
+import Projects from './components/ProjectsHighlights/Projects'
+import Educations from './components/Educations/Educations'
+import Languages from './components/LanguagesBlock/Languages'
 import TabContainer from './components/TabContainer'
 
 function App() {

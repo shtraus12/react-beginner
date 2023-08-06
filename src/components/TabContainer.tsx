@@ -12,15 +12,20 @@ function TabContainer({ tabs }: props) {
   const tabNavigatorRef = React.useRef<HTMLDivElement>(null)
 
   setTimeout(() => {
-    if (tabNavigatorRef.current) tabNavigatorRef.current.scrollLeft += 100
-    setTimeout(() => {
-      if (tabNavigatorRef.current) tabNavigatorRef.current.scrollLeft = 0
-    }, 400)
+    if (tabNavigatorRef.current) {
+      const scrollLeft = tabNavigatorRef.current.scrollLeft
+      tabNavigatorRef.current.scrollLeft = scrollLeft + 100
+      setTimeout(() => {
+        if (tabNavigatorRef.current) {
+          tabNavigatorRef.current.scrollLeft = scrollLeft - 100
+        }
+      }, 400)
+    }
   }, 800)
 
   return (
     <div className="tab-container">
-      <div className="tab-navigator" ref={tabNavigatorRef} onLoad={() => {}}>
+      <div className="tab-navigator" ref={tabNavigatorRef}>
         {tabs.map((tab, index) => {
           return (
             <div
