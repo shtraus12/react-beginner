@@ -3,7 +3,7 @@ import { CVData } from '../models'
 export const cvData: CVData = {
   headerData: {
     avatarPath: './assets/avatar.JPG',
-    fullName: 'Anton Chernykh',
+    fullName: 'Bosir Barbaris',
     position: 'IT Project Manager',
     contactInformation: [
       {
