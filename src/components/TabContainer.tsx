@@ -29,10 +29,14 @@ function TabContainer({ tabs }: TabContainerProps) {
     localStorage.getItem('data-theme') || 'light'
   )
   useEffect(() => {
-    window.addEventListener('storage', () => {
+    const updateTheme = () => {
       setDataTheme(localStorage.getItem('data-theme') || 'light')
-    })
-  })
+    }
+    window.addEventListener('storage', updateTheme)
+    return () => {
+      window.removeEventListener('storage', updateTheme)
+    }
+  }, [])
 
   return (
     <div className="tab-container" data-type={dataTheme}>

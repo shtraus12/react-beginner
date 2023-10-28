@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import { LanguagesData } from '../../models'
 
-interface LangugaesProps {
+interface LanguagesProps {
   languages: LanguagesData
 }
 
-function Languages({ languages }: LangugaesProps) {
+function Languages({ languages }: LanguagesProps) {
   const [dataTheme, setDataTheme] = useState(
     localStorage.getItem('data-theme') || 'light'
   )
   useEffect(() => {
-    window.addEventListener('storage', () => {
+    const updateTheme = () => {
       setDataTheme(localStorage.getItem('data-theme') || 'light')
-    })
-  })
+    }
+    window.addEventListener('storage', updateTheme)
+    return () => {
+      window.removeEventListener('storage', updateTheme)
+    }
+  }, [])
 
   return (
     <div className="languages-block" data-theme={dataTheme}>
