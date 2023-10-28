@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { CareersData } from '../../models'
 import TextBlock from '../TextBlock'
 
@@ -7,8 +7,17 @@ interface CareersProps {
 }
 
 function Careers({ careers }: CareersProps) {
+  const [dataTheme, setDataTheme] = useState(
+    localStorage.getItem('data-theme') || 'light'
+  )
+  useEffect(() => {
+    window.addEventListener('storage', () => {
+      setDataTheme(localStorage.getItem('data-theme') || 'light')
+    })
+  })
+
   return (
-    <div className="career-block">
+    <div className="career-block" data-theme={dataTheme}>
       {careers.map((career, index) => {
         return (
           <div className="work-experience" key={`work-experience-${index}`}>

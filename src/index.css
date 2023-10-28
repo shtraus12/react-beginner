@@ -5,13 +5,20 @@
 @import url('./components/ProjectsHighlights/projects-highlights-block.css');
 @import url('./components/LanguagesBlock/languages-block.css');
 @import url('./styles/tab-container.css');
+@import url('./styles/toggle-switch.css');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
 
-body {
+html {
+  background-color: var(--white);
+  color: var(--grey-300);
 }
 
 html[data-theme='dark'] {
   background-color: var(--grey-700);
+  color: var(--grey-100);
+}
+
+body {
 }
 
 #root {
@@ -22,12 +29,6 @@ html[data-theme='dark'] {
   box-sizing: border-box;
 
   scroll-behavior: smooth;
-
-  color: var(--grey-300);
-}
-
-#root[data-theme='dark'] {
-  color: var(--grey-100);
 }
 
 .container {
@@ -83,7 +84,7 @@ hr[data-theme='dark'] {
   --h4-font-family: 'Montserrat', sans-serif;
   --h4-font-size: 1.2rem;
   --h4-font-style: normal;
-  --h4-font-weight: 500;
+  --h4-font-weight: 400;
   --h4-line-height: 1.2rem;
 
   /* Hind-headline */
@@ -99,7 +100,7 @@ hr[data-theme='dark'] {
   --hind-normal-font-family: 'Montserrat', sans-serif;
   --hind-normal-font-size: 0.9rem;
   --hind-normal-font-style: normal;
-  --hind-normal-font-weight: 400;
+  --hind-normal-font-weight: 300;
   --hind-normal-line-height: 1.2rem;
 
   /* Hind-subnormal */

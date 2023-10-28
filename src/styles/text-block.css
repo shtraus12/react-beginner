@@ -21,8 +21,6 @@
 
   text-align: justify;
   text-justify: distribute;
-
-  color: var(--grey-300);
 }
 
 .text-block .block-body p {

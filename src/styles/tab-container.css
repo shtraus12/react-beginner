@@ -29,6 +29,10 @@
   color: var(--black);
 }
 
+.tab-container[data-type='dark'] .tab-active {
+  color: var(--grey-100);
+}
+
 .tab-navigator .tab {
   cursor: pointer;
   transition: all 1s 0s;
@@ -38,6 +42,10 @@
   height: max-content;
 
   white-space: nowrap;
+}
+
+.tab-container[data-type='dark'] .tab {
+  color: var(--grey-300);
 }
 
 .tab-navigator .tab:hover {

@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 
 interface TabContainerProps {
   tabs: Array<{
@@ -25,8 +25,17 @@ function TabContainer({ tabs }: TabContainerProps) {
     }, 800)
   })
 
+  const [dataTheme, setDataTheme] = useState(
+    localStorage.getItem('data-theme') || 'light'
+  )
+  useEffect(() => {
+    window.addEventListener('storage', () => {
+      setDataTheme(localStorage.getItem('data-theme') || 'light')
+    })
+  })
+
   return (
-    <div className="tab-container">
+    <div className="tab-container" data-type={dataTheme}>
       <div className="tab-navigator" ref={tabNavigatorRef}>
         {tabs.map((tab, index) => {
           return (
