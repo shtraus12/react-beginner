@@ -11,10 +11,14 @@ function Careers({ careers }: CareersProps) {
     localStorage.getItem('data-theme') || 'light'
   )
   useEffect(() => {
-    window.addEventListener('storage', () => {
+    const updateTheme = () => {
       setDataTheme(localStorage.getItem('data-theme') || 'light')
-    })
-  })
+    }
+    window.addEventListener('storage', updateTheme)
+    return () => {
+      window.removeEventListener('storage', updateTheme)
+    }
+  }, [])
 
   return (
     <div className="career-block" data-theme={dataTheme}>

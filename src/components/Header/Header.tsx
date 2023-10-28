@@ -12,10 +12,14 @@ function Header(this: any, { headerData }: HeaderProps) {
   )
 
   useEffect(() => {
-    window.addEventListener('storage', () => {
+    const updateTheme = () => {
       setDataTheme(localStorage.getItem('data-theme') || 'light')
-    })
-  })
+    }
+    window.addEventListener('storage', updateTheme)
+    return () => {
+      window.removeEventListener('storage', updateTheme)
+    }
+  }, [])
 
   function themeChangeHandler(arg: SyntheticEvent) {
     const newTheme = (arg.target as HTMLInputElement).checked ? 'dark' : 'light'
@@ -36,7 +40,7 @@ function Header(this: any, { headerData }: HeaderProps) {
             type="checkbox"
             className="checkbox"
             checked={dataTheme === 'dark' ? true : false}
-            onClick={themeChangeHandler.bind(this)}
+            onClick={themeChangeHandler}
           />
           <label htmlFor="toggle" className="switch"></label>
         </div>

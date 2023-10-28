@@ -8,7 +8,9 @@ interface ProfileProps {
 
 function Profile({ profile }: ProfileProps) {
   return (
-    <div className="text-block">{<TextBlock body={profile.description} />}</div>
+    <div className="text-block">
+      <TextBlock body={profile.description} />
+    </div>
   )
 }
 

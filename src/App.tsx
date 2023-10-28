@@ -20,11 +20,17 @@ function App() {
   document.querySelector('html')?.setAttribute('data-theme', dataTheme)
 
   useEffect(() => {
-    window.addEventListener('storage', () => {
-      setDataTheme(localStorage.getItem('data-theme') || 'light')
-      document.querySelector('html')?.setAttribute('data-theme', dataTheme)
-    })
-  })
+    const updateTheme = () => {
+      const newTheme = localStorage.getItem('data-theme') || 'light'
+      setDataTheme(newTheme)
+      document.querySelector('html')?.setAttribute('data-theme', newTheme)
+    }
+    window.addEventListener('storage', updateTheme)
+    return () => {
+      window.removeEventListener('storage', updateTheme)
+    }
+  }, [])
+
   const tabs: tabs = [
     {
       tabTitle: 'Profile',
