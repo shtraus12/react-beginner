@@ -29,7 +29,7 @@
   color: var(--black);
 }
 
-.tab-container[data-type='dark'] .tab-active {
+.tab-container[data-theme='dark'] .tab-active {
   color: var(--grey-100);
 }
 
@@ -44,7 +44,7 @@
   white-space: nowrap;
 }
 
-.tab-container[data-type='dark'] .tab {
+.tab-container[data-theme='dark'] .tab {
   color: var(--grey-300);
 }
 

@@ -21,8 +21,9 @@ function App() {
 
   useEffect(() => {
     const updateTheme = () => {
-      setDataTheme(localStorage.getItem('data-theme') || 'light')
-      document.querySelector('html')?.setAttribute('data-theme', dataTheme)
+      const newTheme = localStorage.getItem('data-theme') || 'light'
+      setDataTheme(newTheme)
+      document.querySelector('html')?.setAttribute('data-theme', newTheme)
     }
     window.addEventListener('storage', updateTheme)
     return () => {

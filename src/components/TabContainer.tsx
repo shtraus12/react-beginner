@@ -39,7 +39,7 @@ function TabContainer({ tabs }: TabContainerProps) {
   }, [])
 
   return (
-    <div className="tab-container" data-type={dataTheme}>
+    <div className="tab-container" data-theme={dataTheme}>
       <div className="tab-navigator" ref={tabNavigatorRef}>
         {tabs.map((tab, index) => {
           return (
