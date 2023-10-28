@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { LanguagesData } from '../../models'
 
 interface LangugaesProps {
@@ -6,9 +6,18 @@ interface LangugaesProps {
 }
 
 function Languages({ languages }: LangugaesProps) {
+  const [dataTheme, setDataTheme] = useState(
+    localStorage.getItem('data-theme') || 'light'
+  )
+  useEffect(() => {
+    window.addEventListener('storage', () => {
+      setDataTheme(localStorage.getItem('data-theme') || 'light')
+    })
+  })
+
   return (
-    <div className="languages-block">
-      <div className="block-header">Langagues</div>
+    <div className="languages-block" data-theme={dataTheme}>
+      <div className="block-header">Languages</div>
       <div className="block-body">
         {languages.map((language, index) => {
           return (

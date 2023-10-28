@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { ProjectsData } from '../../models'
 
 interface ProjectsProps {
@@ -6,8 +6,17 @@ interface ProjectsProps {
 }
 
 function Projects({ projects }: ProjectsProps) {
+  const [dataTheme, setDataTheme] = useState(
+    localStorage.getItem('data-theme') || 'light'
+  )
+  useEffect(() => {
+    window.addEventListener('storage', () => {
+      setDataTheme(localStorage.getItem('data-theme') || 'light')
+    })
+  })
+
   return (
-    <div className="projects-highlights-block">
+    <div className="projects-highlights-block" data-theme={dataTheme}>
       {projects.map((project, index) => {
         return (
           <div className="project" key={index}>

@@ -36,14 +36,16 @@
   max-width: 20rem;
 }
 
+.projects-highlights-block[data-theme='dark'] .project-title {
+  color: var(--grey-100);
+}
+
 .projects-highlights-block .dates-duration {
   font-family: var(--hind-subnormal-font-family);
   font-size: var(--hind-subnormal-font-size);
   font-style: var(--hind-subnormal-font-style);
   font-weight: var(--hind-subnormal-font-weight);
   line-height: var(--hind-subnormal-line-height);
-
-  color: var(--grey-300);
 
   min-width: 7rem;
 }
@@ -54,8 +56,6 @@
   font-style: var(--hind-normal-font-style);
   font-weight: var(--hind-normal-font-weight);
   line-height: var(--hind-normal-line-height);
-
-  color: var(--grey-300);
 
   display: flex;
   flex-direction: column;
