@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useEffect, useState } from 'react'
 import { cvData } from './data/cvData'
 import Header from './components/Header/Header'
 import Careers from './components/Careers/Careers'
@@ -7,7 +7,6 @@ import Projects from './components/ProjectsHighlights/Projects'
 import Educations from './components/Educations/Educations'
 import Languages from './components/LanguagesBlock/Languages'
 import TabContainer from './components/TabContainer'
-import { type } from 'os'
 
 type tabs = Array<{
   tabTitle: string
@@ -15,6 +14,17 @@ type tabs = Array<{
 }>
 
 function App() {
+  const [dataTheme, setDataTheme] = useState(
+    localStorage.getItem('data-theme') || 'light'
+  )
+  document.querySelector('html')?.setAttribute('data-theme', dataTheme)
+
+  useEffect(() => {
+    window.addEventListener('storage', () => {
+      setDataTheme(localStorage.getItem('data-theme') || 'light')
+      document.querySelector('html')?.setAttribute('data-theme', dataTheme)
+    })
+  })
   const tabs: tabs = [
     {
       tabTitle: 'Profile',

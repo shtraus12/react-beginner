@@ -18,6 +18,10 @@
   box-shadow: 0px 0px 10px rgba(26, 9, 9, 0.4);
 }
 
+.header[data-theme='dark'] .person img {
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.25);
+}
+
 .header .person .name-position {
   display: flex;
   flex-direction: column;
@@ -34,6 +38,10 @@
   color: var(--black);
 }
 
+.header[data-theme='dark'] .person .name {
+  color: var(--white);
+}
+
 .header .person .position {
   font-family: var(--h4-font-family);
   font-size: var(--h4-font-size);
@@ -42,6 +50,10 @@
   line-height: var(--h4-line-height);
 
   color: var(--grey-300);
+}
+
+.header[data-theme='dark'] .person .position {
+  color: var(--grey-100);
 }
 
 .header .contact-information {
@@ -59,6 +71,10 @@
   flex-direction: column;
 
   gap: 0.5rem;
+}
+
+.header[data-theme='dark'] .contact-information {
+  color: var(--grey-100);
 }
 
 .header .contact-information a {

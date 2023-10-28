@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { EducationsData } from '../../models'
 
 interface EducationsProps {
@@ -6,8 +6,17 @@ interface EducationsProps {
 }
 
 function Educations({ educations }: EducationsProps) {
+  const [dataTheme, setDataTheme] = useState(
+    localStorage.getItem('data-theme') || 'light'
+  )
+  useEffect(() => {
+    window.addEventListener('storage', () => {
+      setDataTheme(localStorage.getItem('data-theme') || 'light')
+    })
+  })
+
   return (
-    <div className="educations-block">
+    <div className="educations-block" data-theme={dataTheme}>
       {educations.map((education, index) => {
         return (
           <div className="education-block" key={index}>
