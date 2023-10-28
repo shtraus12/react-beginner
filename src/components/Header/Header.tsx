@@ -1,6 +1,6 @@
 import { SyntheticEvent, useEffect, useState } from 'react'
 import { HeaderData } from '../../models'
-import { SyntheticEventData } from 'react-dom/test-utils'
+import DarkModeToggle from '../DarkModeToggle/DarkModeToggle'
 
 interface HeaderProps {
   headerData: HeaderData
@@ -21,13 +21,6 @@ function Header(this: any, { headerData }: HeaderProps) {
     }
   }, [])
 
-  function themeChangeHandler(arg: SyntheticEvent) {
-    const newTheme = (arg.target as HTMLInputElement).checked ? 'dark' : 'light'
-    localStorage.setItem('data-theme', newTheme)
-    setDataTheme(newTheme)
-    window.dispatchEvent(new Event('storage'))
-  }
-
   return (
     <div className="header" data-theme={dataTheme}>
       <div className="person">
@@ -35,14 +28,7 @@ function Header(this: any, { headerData }: HeaderProps) {
         <div className="name-position">
           <div className="name">{headerData.fullName}</div>
           <div className="position">{headerData.position}</div>
-          <input
-            id="toggle"
-            type="checkbox"
-            className="checkbox"
-            checked={dataTheme === 'dark' ? true : false}
-            onClick={themeChangeHandler}
-          />
-          <label htmlFor="toggle" className="switch"></label>
+          <DarkModeToggle />
         </div>
       </div>
       <div className="contact-information">

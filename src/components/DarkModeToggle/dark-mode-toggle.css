@@ -1,0 +1,43 @@
+label {
+  position: absolute;
+  min-width: 3rem;
+  min-height: 1.5em;
+  background-color: var(--grey-400);
+  border-radius: 4rem;
+  cursor: pointer;
+}
+
+input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  min-width: 3rem;
+  min-height: 1.5em;
+  border-radius: 4rem;
+  transition: 0.3s;
+}
+
+input:checked ~ .slider {
+  background-color: var(--grey-100);
+}
+
+.slider::before {
+  content: '';
+  position: absolute;
+  top: 0.15rem;
+  left: 0.25rem;
+  min-width: 1.15rem;
+  min-height: 1.15rem;
+  border-radius: 50%;
+  box-shadow: inset 0.25rem -4px 0px 0px var(--grey-100);
+  background-color: var(--grey-400);
+  transition: 0.3s;
+}
+
+input:checked ~ .slider::before {
+  transform: translateX(1.35rem);
+  background-color: var(--black);
+  box-shadow: none;
+}
