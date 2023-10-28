@@ -8,7 +8,7 @@ interface LangugaesProps {
 function Languages({ languages }: LangugaesProps) {
   return (
     <div className="languages-block">
-      <div className="block-header">Langagues</div>
+      <div className="block-header">Languages</div>
       <div className="block-body">
         {languages.map((language, index) => {
           return (

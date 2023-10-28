@@ -25,6 +25,8 @@
 
 .tab-navigator .tab-active {
   white-space: nowrap;
+
+  color: var(--black);
 }
 
 .tab-navigator .tab {

@@ -3,7 +3,7 @@ import { CVData } from '../models'
 export const cvData: CVData = {
   headerData: {
     avatarPath: './assets/avatar.JPG',
-    fullName: 'Bosir Barbaris',
+    fullName: 'Anton Chernykh',
     position: 'IT Project Manager',
     contactInformation: [
       {
@@ -27,7 +27,7 @@ export const cvData: CVData = {
       {
         iconPath: './assets/icons/Location.svg',
         title: 'Location',
-        body: 'Kazakhstan (both relocation and remote work are considered',
+        body: 'Kazakhstan (both relocation and remote work are considered)',
       },
     ],
   },
